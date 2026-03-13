@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>LOGIC OF PHYSICS</title>
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#1e3a5f',
+                        },
+                        slate: {
+                            600: '#475569',
+                            800: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Background Images from Unsplash */
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-bg {
+            background-image: linear-gradient(to bottom, rgba(30, 58, 138, 0.95), rgba(30, 58, 138, 0.95)), url('https://images.unsplash.com/photo-1549488344-c0fb95393a54?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Smooth View Transitions */
+        .view-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .view-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Video Expand/Collapse Animation */
+        .video-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .video-container.expanded {
+            max-height: 800px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-wider text-navy-800 font-serif">LOGIC OF PHYSICS</span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-8">
+                    <button onclick="switchView('home')"
+                        class="nav-btn text-navy-800 border-b-2 border-navy-800 pb-1 font-medium transition-colors"
+                        data-target="home">Home</button>
+                    <button onclick="switchView('courses')"
+                        class="nav-btn text-slate-600 hover:text-navy-800 font-medium transition-colors border-b-2 border-transparent pb-1"
+                        data-target="courses">Courses</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+
+        <!-- ============================================== -->
+        <!-- ================ PAGE 1: HOME ================ -->
+        <!-- ============================================== -->
+        <section id="home-view" class="view-section active">
+
+            <!-- Hero Section -->
+            <div class="hero-bg py-32 md:py-48 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-5xl md:text-7xl font-bold text-navy-900 mb-6 tracking-tight drop-shadow-sm">LOGIC OF
+                        PHYSICS</h1>
+                    <p class="text-xl md:text-3xl text-slate-800 font-light tracking-wide serif italic">by Thusith
+                        Herath.</p>
+                </div>
+            </div>
+
+            <!-- About Physics Section -->
+            <div class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-navy-800 mb-8">The Beauty of Logic in the Physical World</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed font-light mb-6">
+                        Physics is not merely a collection of formulas to memorize; it is the fundamental language of
+                        the universe.
+                        Through logic and reasoning, we decode the mechanisms that govern everything from the smallest
+                        subatomic
+                        particles to the vastness of the cosmos.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed font-light">
+                        Join us on a journey to build a rigorous analytical mindset, where profound understanding
+                        replaces rote learning.
+                        Step into a world where every phenomenon has a reason, and a logic behind it.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Featured Video Section -->
+            <div class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-gray-200">
+                <div class="max-w-4xl mx-auto text-center">
+
+                    <!-- EDIT HERE: Modify the Featured Video Title Below -->
+                    <h3 class="text-3xl font-semibold text-navy-800 mb-10 serif">Featured: Introduction to Mechanics
+                    </h3>
+
+                    <!-- EDIT HERE: Paste your YouTube Embed Link in the 'src' attribute below -->
+                    <!-- Keep the 'style' padding-top at 56.25% for 16:9 ratio -->
+                    <div class="relative w-full overflow-hidden rounded-2xl shadow-xl bg-black"
+                        style="padding-top: 56.25%;">
+                        <iframe class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/Vf2N044lFOo"
+                            referrerpolicy="strict-origin-when-cross-origin" title="Logic of Physics - Thusith Herath"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- ================ PAGE 2: COURSES ================ -->
+        <!-- ================================================= -->
+        <section id="courses-view" class="view-section">
+
+            <!-- Courses Header -->
+            <div class="section-bg py-24 px-4 sm:px-6 lg:px-8 shadow-inner">
+                <div class="max-w-7xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Logic & Learning</h2>
+                    <p class="text-blue-100 text-lg md:text-xl font-light">Select an academic tier below to access your
+                        weekly sessions</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+                <!-- Course Navigation Grid -->
+                <!-- The 5 buttons map to the 'showCourse' JS logic below -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+                    <button onclick="showCourse('course-2026-paper', this)"
+                        class="course-tab-btn w-full bg-navy-50 border-navy-800 text-navy-900 border-2 py-4 rounded-xl shadow-sm hover:shadow-md transition-all font-semibold focus:outline-none">2026
+                        Paper Class</button>
+                    <button onclick="showCourse('course-2026', this)"
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">2026
+                        Class</button>
+                    <button onclick="showCourse('course-2027', this)"
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">2027
+                        Class</button>
+                    <button onclick="showCourse('course-2028', this)"
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">2028
+                        Class</button>
+                    <button onclick="showCourse('course-episodes', this)"
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none col-span-2 lg:col-span-1">Logic
+                        of Physics<br><span class="text-sm font-normal text-slate-500">Episodes</span></button>
+                </div>
+
+                <!-- Course Contents Container -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 min-h-[500px]">
+
+                    <!-- ==================== 2026 PAPER CLASS ==================== -->
+                    <div id="course-2026-paper" class="course-pane block">
+                        <div class="border-b border-gray-100 pb-6 mb-8 flex items-center justify-between">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">2026 Paper Class</h3>
+                            <span
+                                class="text-sm font-medium bg-blue-100 text-navy-800 px-3 py-1 rounded-full">Active</span>
+                        </div>
+
+                        <div class="space-y-6">
+
+                            <!-- LESSON 1 -->
+                            <!-- DEVELOPER CONTROL: Use class 'block' to show, or 'hidden' to hide from students -->
+                            <div
+                                class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)"
+                                    class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <!-- Video Icon -->
+                                        <div
+                                            class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-play ml-1 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">Week 01: Kinematics
+                                                Revision</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Duration: 2h 15m</p>
+                                        </div>
+                                    </div>
+                                    <i
+                                        class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+
+                                <div class="video-container bg-white">
+                                    <div class="p-6">
+                                        <!-- EDIT HERE: Paste YouTube embed link for Week 01 -->
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black"
+                                            style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Week 01 Video"
+                                                frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LESSON 2 -->
+                            <!-- DEVELOPER CONTROL: Currently set to 'hidden' to keep it private. Change to 'block' to show. -->
+                            <div
+                                class="lesson-item hidden border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)"
+                                    class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <!-- Video Icon -->
+                                        <div
+                                            class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-play ml-1 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">Week 02: Dynamics Past
+                                                Papers</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Duration: 1h 45m</p>
+                                        </div>
+                                    </div>
+                                    <i
+                                        class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+
+                                <div class="video-container bg-white">
+                                    <div class="p-6">
+                                        <!-- EDIT HERE: Paste YouTube embed link for Week 02 -->
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black"
+                                            style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full" src=""
+                                                title="Week 02 Video" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ==================== 2026 CLASS ==================== -->
+                    <div id="course-2026" class="course-pane hidden">
+                        <div class="border-b border-gray-100 pb-6 mb-8">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">2026 Class</h3>
+                            <p class="text-slate-500 mt-2">Theory sessions for the 2026 cohort.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- LESSON 1 -->
+                            <!-- DEVELOPER CONTROL: Visibility class ('block'/'hidden') -->
+                            <div
+                                class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)"
+                                    class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div
+                                            class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-play ml-1 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">Week 01: Measurement &
+                                                Units</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Introduction to physical quantities
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <i
+                                        class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6">
+                                        <!-- EDIT HERE: YouTube Link -->
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black"
+                                            style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"
+                                                frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== 2027 CLASS ==================== -->
+                    <div id="course-2027" class="course-pane hidden">
+                        <div class="border-b border-gray-100 pb-6 mb-8">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">2027 Class</h3>
+                            <p class="text-slate-500 mt-2">Fundamental mechanics for the 2027 cohort.</p>
+                        </div>
+                    </div>
+
+                    <!-- ==================== 2028 CLASS ==================== -->
+                    <div id="course-2028" class="course-pane hidden">
+                        <div class="border-b border-gray-100 pb-6 mb-8">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">2028 Class</h3>
+                            <p class="text-slate-500 mt-2">Content for the 2028 cohort will be available soon.</p>
+                        </div>
+                    </div>
+
+                    <!-- ==================== LOGIC OF PHYSICS EPISODES ==================== -->
+                    <div id="course-episodes" class="course-pane hidden">
+                        <div class="border-b border-gray-100 pb-6 mb-8">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">Logic of Physics Episodes</h3>
+                            <p class="text-slate-500 mt-2">Special conceptual episodes designed to deepen your intuitive
+                                understanding.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- EPISODE 1 -->
+                            <div
+                                class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)"
+                                    class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div
+                                            class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-atom text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">Episode 01: The Nature of
+                                                Light</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Wave-particle duality overview</p>
+                                        </div>
+                                    </div>
+                                    <i
+                                        class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6">
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black"
+                                            style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"
+                                                frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 py-12 border-t border-navy-800 flex-shrink-0 text-center text-slate-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <h4 class="text-2xl font-bold text-white mb-2 tracking-wide font-serif">LOGIC OF PHYSICS</h4>
+            <p class="text-sm mb-8 text-blue-200 font-light">by Thusith Herath</p>
+            <div class="h-px bg-navy-800 w-1/2 mx-auto mb-8"></div>
+            <p class="text-xs text-slate-500 tracking-wider uppercase">&copy; 2023-2024 Logic of Physics. All rights
+                reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic -->
+    <script>
+        // Set up the initial state when document loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure Home is shown by default
+            const homeView = document.getElementById('home-view');
+            homeView.style.display = 'block';
+            setTimeout(() => homeView.classList.add('active'), 10);
+        });
+
+        // Toggle Views (Home <--> Courses)
+        function switchView(viewName) {
+            const allViews = document.querySelectorAll('.view-section');
+            const targetView = document.getElementById(`${viewName}-view`);
+
+            // Check if it's already active
+            if (targetView.classList.contains('active')) return;
+
+            // Fade out current view
+            allViews.forEach(view => {
+                if (view.classList.contains('active')) {
+                    view.classList.remove('active');
+                    // wait for fade out transition (300ms) before hiding
+                    setTimeout(() => {
+                        view.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Delay fade in to allow fade out to complete
+            setTimeout(() => {
+                targetView.style.display = 'block';
+                // slight delay to enforce display block before opacity transition
+                setTimeout(() => {
+                    targetView.classList.add('active');
+                }, 50);
+            }, 300);
+
+            // Update Navbar UI
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.target === viewName) {
+                    btn.classList.replace('text-slate-600', 'text-navy-800');
+                    btn.classList.replace('border-transparent', 'border-navy-800');
+                } else {
+                    btn.classList.replace('text-navy-800', 'text-slate-600');
+                    btn.classList.replace('border-navy-800', 'border-transparent');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Switch between Course Panes inside tracking Courses view
+        function showCourse(courseId, btnElement) {
+            // Hide all sub-panes
+            document.querySelectorAll('.course-pane').forEach(pane => {
+                pane.classList.add('hidden');
+                pane.classList.remove('block');
+            });
+
+            // Show new sub-pane
+            document.getElementById(courseId).classList.remove('hidden');
+            document.getElementById(courseId).classList.add('block');
+
+            // Reset all tab button styles
+            const allTabs = document.querySelectorAll('.course-tab-btn');
+            allTabs.forEach(tab => {
+                tab.classList.remove('bg-navy-50', 'border-navy-800', 'text-navy-900');
+                tab.classList.add('bg-white', 'border-transparent', 'text-slate-700');
+            });
+
+            // Style the active tab button
+            if (btnElement) {
+                btnElement.classList.remove('bg-white', 'border-transparent', 'text-slate-700');
+                btnElement.classList.add('bg-navy-50', 'border-navy-800', 'text-navy-900');
+            }
+        }
+
+        // Expand / Collapse Video Sections
+        function toggleVideo(btn) {
+            const container = btn.nextElementSibling;
+            const icon = btn.querySelector('.fa-chevron-down');
+
+            if (container.classList.contains('expanded')) {
+                // Collapse
+                container.classList.remove('expanded');
+                icon.style.transform = 'rotate(0deg)';
+                btn.classList.remove('bg-gray-100');
+                btn.classList.add('bg-gray-50');
+            } else {
+                // Auto-collapse other open videos within the same course pane
+                const parentPane = btn.closest('.course-pane');
+                if (parentPane) {
+                    parentPane.querySelectorAll('.video-container.expanded').forEach(c => {
+                        if (c !== container) {
+                            c.classList.remove('expanded');
+                            const otherIcon = c.previousElementSibling.querySelector('.fa-chevron-down');
+                            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                            c.previousElementSibling.classList.remove('bg-gray-100');
+                            c.previousElementSibling.classList.add('bg-gray-50');
+                        }
+                    });
+                }
+
+                // Expand
+                container.classList.add('expanded');
+                icon.style.transform = 'rotate(180deg)';
+                btn.classList.remove('bg-gray-50');
+                btn.classList.add('bg-gray-100');
+            }
+        }
+    </script>
+</body>
+
+</html>
