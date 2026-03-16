@@ -126,7 +126,7 @@
 
                 <!-- Course Navigation Grid -->
                 <!-- The 5 buttons map to the 'showCourse' JS logic below -->
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
                     <button onclick="showCourse('course-2026-paper', this)"
                         class="course-tab-btn w-full bg-navy-50 border-navy-800 text-navy-900 border-2 py-4 rounded-xl shadow-sm hover:shadow-md transition-all font-semibold focus:outline-none">2026
                         Paper Class</button>
@@ -140,8 +140,10 @@
                         class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">2028
                         Class</button>
                     <button onclick="showCourse('course-episodes', this)"
-                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none col-span-2 lg:col-span-1">Logic
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">Logic
                         of Physics<br><span class="text-sm font-normal text-slate-500">Episodes</span></button>
+                    <button onclick="showCourse('course-practicals', this)"
+                        class="course-tab-btn w-full bg-white border-transparent text-slate-700 border-2 py-4 rounded-xl shadow-sm hover:shadow-md hover:border-gray-300 transition-all font-semibold focus:outline-none">Practicals</button>
                 </div>
 
                 <!-- Course Contents Container -->
@@ -329,6 +331,150 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== PRACTICALS ==================== -->
+                    <div id="course-practicals" class="course-pane hidden">
+                        <div class="border-b border-gray-100 pb-6 mb-8">
+                            <h3 class="text-3xl font-bold text-navy-800 serif">Practicals</h3>
+                            <p class="text-slate-500 mt-2 text-lg font-medium">01. Measuring Instruments</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            
+                            <!-- LESSON 1 -->
+                            <div class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-flask text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">01. Usage of the vernier callipers</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Measuring Instruments</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6 flex flex-col space-y-4">
+                                        <div class="flex sm:flex-row flex-col sm:items-center justify-between bg-blue-50 p-4 rounded-xl border border-blue-100 gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fa-regular fa-file-pdf text-red-500 text-2xl"></i>
+                                                <span class="font-semibold text-navy-800">Tutorial: Vernier Callipers</span>
+                                            </div>
+                                            <a href="#" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-sm flex items-center justify-center space-x-2">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Download</span>
+                                            </a>
+                                        </div>
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black" style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vernier Callipers Video" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LESSON 2 -->
+                            <div class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-flask text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">02. Usage of the micrometer screwgauge</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Measuring Instruments</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6 flex flex-col space-y-4">
+                                        <div class="flex sm:flex-row flex-col sm:items-center justify-between bg-blue-50 p-4 rounded-xl border border-blue-100 gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fa-regular fa-file-pdf text-red-500 text-2xl"></i>
+                                                <span class="font-semibold text-navy-800">Tutorial: Micrometer Screwgauge</span>
+                                            </div>
+                                            <a href="#" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-sm flex items-center justify-center space-x-2">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Download</span>
+                                            </a>
+                                        </div>
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black" style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Micrometer Screwgauge Video" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LESSON 3 -->
+                            <div class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-flask text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">03. Usage of the spherometer</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Measuring Instruments</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6 flex flex-col space-y-4">
+                                        <div class="flex sm:flex-row flex-col sm:items-center justify-between bg-blue-50 p-4 rounded-xl border border-blue-100 gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fa-regular fa-file-pdf text-red-500 text-2xl"></i>
+                                                <span class="font-semibold text-navy-800">Tutorial: Spherometer</span>
+                                            </div>
+                                            <a href="#" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-sm flex items-center justify-center space-x-2">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Download</span>
+                                            </a>
+                                        </div>
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black" style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Spherometer Video" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LESSON 4 -->
+                            <div class="lesson-item block border border-gray-200 rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow">
+                                <button onclick="toggleVideo(this)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none group bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-navy-800 text-white rounded-full flex items-center justify-center group-hover:bg-navy-900 transition-transform transform group-hover:scale-105 shadow-md">
+                                            <i class="fa-solid fa-flask text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-slate-900">04. Usage of travelling microscope</h4>
+                                            <p class="text-sm text-slate-500 mt-1">Measuring Instruments</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down text-slate-400 text-xl transform transition-transform duration-300"></i>
+                                </button>
+                                <div class="video-container bg-white">
+                                    <div class="p-6 flex flex-col space-y-4">
+                                        <div class="flex sm:flex-row flex-col sm:items-center justify-between bg-blue-50 p-4 rounded-xl border border-blue-100 gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fa-regular fa-file-pdf text-red-500 text-2xl"></i>
+                                                <span class="font-semibold text-navy-800">Tutorial: Travelling Microscope</span>
+                                            </div>
+                                            <a href="#" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-sm flex items-center justify-center space-x-2">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Download</span>
+                                            </a>
+                                        </div>
+                                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-black" style="padding-top: 56.25%;">
+                                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Travelling Microscope Video" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
