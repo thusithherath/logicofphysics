@@ -37,6 +37,9 @@
                     <button onclick="switchView('home')"
                         class="nav-btn text-navy-800 border-b-2 border-navy-800 pb-1 font-medium transition-colors"
                         data-target="home">Home</button>
+                    <button onclick="switchView('liveclass')"
+                        class="nav-btn text-slate-600 hover:text-navy-800 font-medium transition-colors border-b-2 border-transparent pb-1"
+                        data-target="liveclass">Live Class</button>
                     <button onclick="switchView('courses')"
                         class="nav-btn text-slate-600 hover:text-navy-800 font-medium transition-colors border-b-2 border-transparent pb-1"
                         data-target="courses">Courses</button>
@@ -111,8 +114,51 @@
             </div>
         </section>
 
+        <!-- ==================================================== -->
+        <!-- ================ PAGE 2: LIVE CLASS ================ -->
+        <!-- ==================================================== -->
+        <section id="liveclass-view" class="view-section">
+
+            <!-- Live Class Header -->
+            <div class="section-bg py-24 px-4 sm:px-6 lg:px-8 shadow-inner">
+                <div class="max-w-7xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Live Class</h2>
+                    <p class="text-blue-100 text-lg md:text-xl font-light">Join your interactive live sessions here</p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <!-- Content Container -->
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 md:p-12 flex flex-col items-center justify-center space-y-6">
+
+                    <!-- Zoom Join Button -->
+                    <a href="#" target="_blank"
+                        class="w-full max-w-md flex items-center justify-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <i class="fa-solid fa-video text-2xl"></i>
+                        <span class="text-lg">Join for the live class</span>
+                    </a>
+
+                    <!-- Download Materials Button -->
+                    <a href="#" target="_blank"
+                        class="w-full max-w-md flex items-center justify-center space-x-3 bg-navy-800 hover:bg-navy-900 text-white px-6 py-4 rounded-xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <i class="fa-solid fa-download text-2xl"></i>
+                        <span class="text-lg">Download the materials here</span>
+                    </a>
+
+                    <!-- Submit Feedback Form Button -->
+                    <a href="#" target="_blank"
+                        class="w-full max-w-md flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <i class="fa-solid fa-comment-dots text-2xl"></i>
+                        <span class="text-lg">Submit your feedback here</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
         <!-- ================================================= -->
-        <!-- ================ PAGE 2: COURSES ================ -->
+        <!-- ================ PAGE 3: COURSES ================ -->
         <!-- ================================================= -->
         <section id="courses-view" class="view-section">
 
@@ -685,7 +731,7 @@
         </section>
 
         <!-- ===================================================== -->
-        <!-- ================ PAGE 3: PAST PAPERS ================ -->
+        <!-- ================ PAGE 4: PAST PAPERS ================ -->
         <!-- ===================================================== -->
         <section id="pastpapers-view" class="view-section">
 
